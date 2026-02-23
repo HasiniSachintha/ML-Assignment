@@ -36,14 +36,10 @@ dmypy.json
 *.swo
 .DS_Store
 
-### Data & models (keep only versioned examples)
-data/raw/
-data/processed/
+### Models (keep large binaries out of Git)
 models/
 
 # But allow these specific tracked artifacts if needed
-!data/raw/README.md
-!data/processed/README.md
 !models/README.md
 
 # Logs
