@@ -1,50 +1,19 @@
-============================================================
-SHAP EXPLAINABILITY ANALYSIS
-============================================================
+SHAP EXPLAINABILITY REPORT
+==================================================
 
-FEATURE IMPORTANCE RANKING
-------------------------------------------------------------
-         Feature  Mean_|SHAP|
-      Prev_Yield     1.587210
-            Year     1.280337
-          Extent     0.300962
-District_encoded     0.212059
-  Season_encoded     0.011612
+           Feature  Mean_|SHAP|  Avg_SHAP
+        Prev_Yield     0.954883  0.364385
+Yield_RollingMean3     0.752530  0.003596
+        Yield_Lag1     0.570204  0.142166
+  District_encoded     0.244926  0.107428
+        Yield_Lag2     0.226616  0.076121
+        Year_Index     0.224319  0.224311
+Extent_x_PrevYield     0.143703  0.060598
+            Extent     0.097491  0.016912
+      CrisisPeriod     0.014211  0.002424
+    Season_encoded     0.011485  0.001605
 
-FEATURE IMPACT DIRECTION
-------------------------------------------------------------
-Positive SHAP values increase predicted yield
-Negative SHAP values decrease predicted yield
-
-Year:
-  Mean SHAP value: -0.0382
-  Mean |SHAP| value: 1.2803
-  Impact: Generally decreases yield
-
-Extent:
-  Mean SHAP value: 0.0049
-  Mean |SHAP| value: 0.3010
-  Impact: Generally increases yield
-
-Prev_Yield:
-  Mean SHAP value: 0.4435
-  Mean |SHAP| value: 1.5872
-  Impact: Generally increases yield
-
-District_encoded:
-  Mean SHAP value: 0.0580
-  Mean |SHAP| value: 0.2121
-  Impact: Generally increases yield
-
-Season_encoded:
-  Mean SHAP value: 0.0019
-  Mean |SHAP| value: 0.0116
-  Impact: Generally increases yield
-
-============================================================
-INTERPRETATION NOTES
-============================================================
-1. Higher absolute SHAP values indicate greater feature importance
-2. Positive SHAP values suggest the feature increases yield prediction
-3. Negative SHAP values suggest the feature decreases yield prediction
-4. Dependence plots show how feature interactions affect predictions
+Interpretation:
+- Higher |SHAP| = more important feature
+- Positive Avg_SHAP increases yield prediction
+- Negative Avg_SHAP decreases yield prediction

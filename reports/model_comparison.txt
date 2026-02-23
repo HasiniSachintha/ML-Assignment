@@ -2,10 +2,10 @@
 MODEL COMPARISON RESULTS
 ============================================================
 
-            Model   RMSE    MAE     R²  MAPE (%)
-Linear Regression 4.1899 2.8365 0.0366  122.9559
-    Random Forest 3.7397 2.0621 0.2325   74.9452
-          XGBoost 3.3722 1.9589 0.3760   75.3958
+            Model   RMSE    MAE      R²  MAPE (%)
+Linear Regression 5.0745 3.6677 -0.2711  189.0283
+    Random Forest 4.5320 3.0554 -0.0138  156.1355
+          XGBoost 4.5963 3.3095 -0.0428  165.9694
 
 ============================================================
 METRICS EXPLANATION

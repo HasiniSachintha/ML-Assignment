@@ -57,6 +57,12 @@ def load_shap_explainer():
         # Load sample data for SHAP background
         df = pd.read_csv('data/processed/cleaned_ginger_data.csv')
         feature_names = joblib.load('models/feature_names.pkl')
+
+        # Recreate any derived features used during training but not stored
+        # directly in the cleaned CSV (e.g., CrisisPeriod).
+        if 'Year' in df.columns and 'CrisisPeriod' in feature_names and 'CrisisPeriod' not in df.columns:
+            df['CrisisPeriod'] = (df['Year'] >= 2020).astype(int)
+
         X_sample = df[feature_names].sample(min(100, len(df)), random_state=42)
         explainer = shap.TreeExplainer(model)
         return explainer, X_sample
@@ -80,13 +86,17 @@ def preprocess_input(district, year, season, extent, prev_yield, district_encode
     """Preprocess user input to match model format."""
     # Encode district
     district_encoded = district_encoder.transform([district])[0]
-    
+
     # Encode season
     season_encoded = season_encoder.transform([season])[0]
-    
-    # Create feature array
-    features = np.array([[year, extent, prev_yield, district_encoded, season_encoded]])
-    
+
+    # Crisis indicator for post-2020 years, to mirror the training pipeline
+    crisis_period = 1 if year >= 2020 else 0
+
+    # Create feature array matching the training feature order
+    # [Year, Extent, Prev_Yield, District_encoded, Season_encoded, CrisisPeriod]
+    features = np.array([[year, extent, prev_yield, district_encoded, season_encoded, crisis_period]])
+
     return features
 
 def predict_yield(model, features):
