@@ -1,0 +1,56 @@
+### Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# PyInstaller
+*.spec
+build/
+dist/
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# MyPy / type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+### Data & models (keep only versioned examples)
+data/raw/
+data/processed/
+models/
+
+# But allow these specific tracked artifacts if needed
+!data/raw/README.md
+!data/processed/README.md
+!models/README.md
+
+# Logs
+logs/
+*.log
+
+# Streamlit
+.streamlit/
+.streamlit/secrets.toml
+

@@ -1,0 +1,16 @@
+============================================================
+MODEL COMPARISON RESULTS
+============================================================
+
+            Model   RMSE    MAE     R²  MAPE (%)
+Linear Regression 4.1899 2.8365 0.0366  122.9559
+    Random Forest 3.7397 2.0621 0.2325   74.9452
+          XGBoost 3.3722 1.9589 0.3760   75.3958
+
+============================================================
+METRICS EXPLANATION
+============================================================
+RMSE (Root Mean Squared Error): Lower is better
+MAE (Mean Absolute Error): Lower is better
+R² (Coefficient of Determination): Higher is better (max 1.0)
+MAPE (Mean Absolute Percentage Error): Lower is better
